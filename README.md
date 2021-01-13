@@ -1,4 +1,4 @@
 # website
 
-[superlowpower.github.io](https://superlowpower.github.io/)
+[SuperPower.github.io](https://superpower.github.io/)
 
