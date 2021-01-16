@@ -10,7 +10,8 @@ This documentation is created with [hugo](https://gohugo.io/) a static website g
 ## install hugo
 Installing hugo is quite simple, as it's a standalone binary that can be downloaded and added to the system path
 
-* [hugo getting-started : installing](https://gohugo.io/getting-started/installing/)
+{{< new_button href="https://gohugo.io/getting-started/installing/" text="hugo getting-started : installing" >}} 
+
 
 ## clone this repo
 Note the recusive clone to add the git submodules as well
@@ -35,10 +36,11 @@ make sure you commit and push the `public` submodule before the top repo
 
 * for questions or issues related to how to use or contribute to the documentation
 
-https://github.com/Informaticore/SuperPower/issues
+
+{{< new_button href="https://github.com/Informaticore/SuperPower/issues" text="github repo / issues" >}} 
 
 ## doc maintainer
 
 * for any other questions
 
-https://github.com/wassfila
+{{< new_button href="https://github.com/wassfila" text="github.com/wassfila" >}} 
