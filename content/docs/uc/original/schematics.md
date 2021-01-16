@@ -3,10 +3,6 @@ weight: 1
 title: "Schematics"
 BookToC: true
 ---
-{{< hint warning >}}
-Use "shift + mouse wheel" to zoom without moving the page
-{{< /hint >}}
-
 
 ## Top View
 

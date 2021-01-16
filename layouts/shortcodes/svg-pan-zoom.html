@@ -10,6 +10,8 @@
 </div>
 <embed id="svg-{{$id}}" type="image/svg+xml" width=100% src="{{$src}}" style="background-color: #FFFFFF"/>
 <script>
+  //svg-pan-zoom.min.js must be included in the header
+  //https://github.com/WebSVG/svg-pan-zoom/blob/master/dist/svg-pan-zoom.min.js
   function setup_svg_panzoom(){
     let params = {
           panEnabled: true,
@@ -20,7 +22,7 @@
           preventMouseEventsDefault: true,
           zoomScaleSensitivity: 0.6,
           minZoom: 0.5,
-          maxZoom: 3,
+          maxZoom: 4,
            fit: true
           , contain: true
           , center: true
@@ -28,6 +30,7 @@
       };
       let svg_pz = svgPanZoom('#svg-{{$id}}'        ,params);
       window["svg_{{$id}}"] = svg_pz
+
       let button = document.getElementById("btn-{{$id}}");
       button.onclick = ()=>{
           var elem = document.getElementById("svg-{{$id}}");
@@ -47,4 +50,5 @@
   }
   document.getElementById('svg-{{$id}}').addEventListener('load', setup_svg_panzoom)
   window.addEventListener('resize', reset_position)
-</script>
+
+ </script>

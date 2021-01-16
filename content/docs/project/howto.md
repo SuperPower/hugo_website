@@ -1,5 +1,5 @@
 ---
-title: "Doc How to"
+title: "This Website How to"
 description: "How to Contribute to the documentation"
 draft: false
 weight: 3
@@ -31,8 +31,14 @@ generate the website in the `public` folder
 
 make sure you commit and push the `public` submodule before the top repo
 
+## doc support
+
+* for questions or issues related to how to use or contribute to the documentation
+
+https://github.com/Informaticore/SuperPower/issues
+
 ## doc maintainer
 
-Please contact the documentation maintainer [wassfila](https://github.com/wassfila)
-* for questions or issues related to how to use or contribute to the documentation
-* you notice any typo or error that you'd like simply to help by notifying without having to create a ticket
+* for any other questions
+
+https://github.com/wassfila
