@@ -15,10 +15,10 @@ params:
 
 menu:
   after:
-    - name: "Website Repo"
+    - name: "Doc Repo"
       url: "https://github.com/SensorsIot/SuperPower"
       weight: 10
-    - name: "Maintainer"
+    - name: "Doc Maintainer"
       url: "https://github.com/wassfila"
       weight: 11
 
