@@ -7,6 +7,15 @@ title: "Overview"
 This project is currently still under development.
 {{</hint>}}
 
+## Repositories
+
+{{< new_button href="https://github.com/SensorsIot/SuperPower" text="main publishing repo" >}}
+
+{{< new_button href="https://github.com/sethkaz/SuperPower" text="RPI Team working fork" >}}
+
+
+{{< new_button href="https://github.com/jbaumann/SuperPowerFirmware" text="Firmware repo" >}}
+
 ## Block Diagram
 
 {{< new_button href="https://drive.google.com/drive/folders/1bbdN6MEDIAA9Wnlnko5vWSpzcss-Ae2l" text="reference design in gdrive" >}}
