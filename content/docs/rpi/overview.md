@@ -2,7 +2,16 @@
 weight: 1
 title: "Overview"
 ---
+
+{{< hint warning>}}
 This project is currently still under development.
+{{</hint>}}
+
+## Block Diagram
+
+{{< new_button href="https://drive.google.com/drive/folders/1bbdN6MEDIAA9Wnlnko5vWSpzcss-Ae2l" text="reference design in gdrive" >}}
+
+{{< svg-pan-zoom "/rpi/RPi Block Diagram - R1.svg" >}}
 
 The Super Power RPi edition is a battery backup unit for the Raspberry Pi single board computer.  It is meant to work
 with the Raspberry Pi 3 and 4.
