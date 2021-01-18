@@ -16,9 +16,8 @@ Installing hugo is quite simple, as it's a standalone binary that can be downloa
 ## clone this repo
 Note the recusive clone to add the git submodules as well
 
-    >git clone --recursive https://github.com/Informaticore/SuperPower
-    >cd SuperPower
-    >cd website_work_dir
+    >git clone --recursive https://github.com/SuperPower/hugo_website.git
+    >cd hugo_website
 
 ## test locally
 no generation is required to test locally, hugo takes care of generating and serving
@@ -37,7 +36,7 @@ make sure you commit and push the `public` submodule before the top repo
 * for questions or issues related to how to use or contribute to the documentation
 
 
-{{< new_button href="https://github.com/Informaticore/SuperPower/issues" text="github repo / issues" >}} 
+{{< new_button href="https://github.com/SuperPower/hugo_website/issues" text="website repo / issues" >}} 
 
 ## doc maintainer
 
