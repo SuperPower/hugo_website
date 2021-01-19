@@ -6,6 +6,7 @@ date: 2020-10-06T08:48:23+00:00
 lastmod: 2020-10-06T08:48:23+00:00
 draft: false
 images: []
+#{{< discord id="743573481249177720" >}}
 ---
 
 ## Overview
@@ -15,11 +16,11 @@ All hardware designs and products you can find in this repository is licensed un
 
 ## Development links
 
-[Discord Channel](https://discord.gg/dCr86Hk)  
+{{< new_button href="https://discord.gg/dCr86Hk" text="discord server invite">}}
 
-[Google Drive Project Files](https://drive.google.com/drive/folders/1lCirijHUkISdUYBIRblkILHM6fstifWS)
+{{< new_button href="https://drive.google.com/drive/folders/1lCirijHUkISdUYBIRblkILHM6fstifWS" text="Google Drive Project Files">}}
 
-[GitHub Project](https://github.com/SensorsIot/SuperPower)
+{{< new_button href="https://github.com/SensorsIot/SuperPower" text="GitHub Project">}}
 
 ## Kick-off video
 {{< youtube -SJbdPvgQnE >}}
