@@ -14,6 +14,9 @@ Here you should find the best power supplies for your low-power projects. Becaus
 
 All hardware designs and products you can find in this repository is licensed under CERN Open Hardware Licence Version 2 - Weakly Reciprocal
 
+## Kick-off video
+{{< youtube -SJbdPvgQnE >}}
+
 ## Development links
 
 {{< new_button href="https://discord.gg/dCr86Hk" text="discord server invite">}}
@@ -22,5 +25,7 @@ All hardware designs and products you can find in this repository is licensed un
 
 {{< new_button href="https://github.com/SensorsIot/SuperPower" text="GitHub Project">}}
 
-## Kick-off video
-{{< youtube -SJbdPvgQnE >}}
+## Appolo PCB
+{{< my_button href="/docs/uc/original/schematics/" text="schematics details">}}
+
+{{< gltf_viewer "/original/pcb.glb" >}}
