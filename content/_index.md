@@ -28,4 +28,4 @@ All hardware designs and products you can find in this repository is licensed un
 ## Appolo PCB
 {{< my_button href="/docs/uc/original/schematics/" text="schematics details">}}
 
-{{< gltf_viewer "/original/pcb.glb" >}}
+{{< model_viewer "/original/pcb.glb" >}}
