@@ -1,6 +1,6 @@
 ---
 weight: 2
 bookFlatSection: true
-bookCollapseSection: false
-title: "ESP32 SOLAR \"APPOLO\""
+bookCollapseSection: true
+title: "ESP32 COMMON"
 ---

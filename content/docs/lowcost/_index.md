@@ -1,5 +1,5 @@
 ---
 weight: 4
-title: "Original Variant"
+title: "ESP32 \"Artemis\""
 bookFlatSection: true
 ---

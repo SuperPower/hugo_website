@@ -1,6 +1,6 @@
 ---
-weight: 3
+weight: 5
 bookFlatSection: true
 bookCollapseSection: false
-title: "RASPI POWER PACK"
+title: "Raspberry Pi \"Leto\""
 ---
