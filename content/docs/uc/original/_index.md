@@ -1,5 +1,5 @@
 ---
 weight: 3
-title: "ESP32 \"Appolo\""
+title: "Project \"Appolo\""
 bookFlatSection: true
 ---

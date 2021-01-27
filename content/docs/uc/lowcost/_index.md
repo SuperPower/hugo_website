@@ -1,5 +1,5 @@
 ---
 weight: 4
-title: "ESP32 \"Artemis\""
+title: "Project \"Artemis\""
 bookFlatSection: true
 ---
