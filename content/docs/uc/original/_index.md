@@ -1,5 +1,5 @@
 ---
 weight: 3
-title: "Project \"Appolo\""
+title: "Project \"Apollo\""
 bookFlatSection: true
 ---
