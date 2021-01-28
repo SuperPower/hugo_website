@@ -1,5 +1,5 @@
 ---
 weight: 4
-title: "Project Artemis"
+title: "Artemis Board"
 bookFlatSection: true
 ---
