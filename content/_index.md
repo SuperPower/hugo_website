@@ -29,3 +29,8 @@ All hardware designs and products you can find in this repository is licensed un
 {{< my_button href="/docs/uc/original/schematics/" text="schematics details">}}
 
 {{< model_viewer "/original/pcb.glb" >}}
+
+## Leto PCB
+{{< my_button href="/docs/rpi/schematics/" text="schematics details">}}
+
+{{< model_viewer "/rpi/raspi.glb" >}}
