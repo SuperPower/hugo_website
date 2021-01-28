@@ -1,6 +1,6 @@
 ---
 weight: 1
-title: "Schematics"
+title: "Schematics - ESP32"
 BookToC: true
 ---
 
