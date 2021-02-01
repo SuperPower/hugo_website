@@ -25,12 +25,14 @@ All hardware designs and products you can find in this repository is licensed un
 
 {{< new_button href="https://github.com/SensorsIot/SuperPower" text="GitHub Project">}}
 
+## Project Status
+{{< image src="/images/status.png" >}}
 ## Appolo PCB (with ESP32 shield)
 {{< my_button href="/docs/uc/original/schematics/" text="schematics details">}}
 
-{{< model_viewer "/original/pcb.glb" >}}
+{{< model_viewer "/original/pcb.glb" "400" >}}
 
 ## Leto PCB (Raspberry pi hat)
 {{< my_button href="/docs/rpi/schematics/" text="schematics details">}}
 
-{{< model_viewer "/rpi/raspi.glb" >}}
+{{< model_viewer "/rpi/raspi.glb" "400" >}}
