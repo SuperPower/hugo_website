@@ -1,5 +1,6 @@
 ---
-weight: 4
+weight: 2
 title: "Artemis Board"
 bookFlatSection: true
+bookCollapseSection: true
 ---
