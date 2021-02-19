@@ -1,19 +1,15 @@
 ---
 weight: 2
-title: "Board (ESP32 single)"
+title: "Board"
 BookToC: false
 ---
 
-{{< new_button href="https://github.com/Informaticore/SuperPower/actions/runs/527382835" text="github action 01/02/2021">}}
-
-{{< new_button href="https://github.com/Informaticore/SuperPower/commit/1a7d5bbb91955d6d0b11a8e455e990e1fe4743bb" text="schematics 01/02/2021 commit 1a7d5bbb">}}
-
-{{< new_button text="view pdf" href="/lowcost/layout/SuperPower-uC-KiCad-Board.pdf">}}
+{{< new_button href="https://github.com/Informaticore/SuperPower/commit/808a2b8a8f04e907fd5df254bafd0467b538b587" text="schematics 17/02/2021 commit 808a2b8a8">}}
 
 ## Top View
 
-{{< svg-pan-zoom "/lowcost/layout/SuperPower-uC-KiCad-Board_top.svg" "white" >}}
+{{<image src="/lowcost/layout/Top.png" >}}
 
 ## Bottom View
-{{< svg-pan-zoom "/lowcost/layout/SuperPower-uC-KiCad-Board_bottom.svg" "white" >}}
 
+{{<image src="/lowcost/layout/Bottom.png" >}}

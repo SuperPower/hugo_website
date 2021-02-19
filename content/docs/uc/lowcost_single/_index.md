@@ -1,6 +1,6 @@
 ---
-weight: 2
-title: "Artemis Stacked"
+weight: 3
+title: "Artemis Single"
 bookFlatSection: true
 bookCollapseSection: true
 ---
