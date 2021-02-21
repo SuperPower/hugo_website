@@ -1,11 +1,11 @@
 ---
-title : "SuperPower"
-description: "Super Low Power rechargeable Boards for Raspberry pi and ESP32"
-lead: ""
+title : "Low Power uC RPi"
+description: "Two Boards Projects, uC and Rpi. A solar all in one for uC with an ESP32 shield and a multifunction UPS solution for Raspberry pi"
+lead: "Two Boards Projects, uC and Rpi. A solar all in one for uC with an ESP32 shield and a multifunction UPS solution for Raspberry pi"
 date: 2020-10-06T08:48:23+00:00
-lastmod: 2020-10-06T08:48:23+00:00
+lastmod: 2021-02-21T08:48:23+00:00
 draft: false
-images: []
+images: ["/images/status.png"]
 #{{< discord id="743573481249177720" >}}
 ---
 
