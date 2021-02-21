@@ -2,7 +2,7 @@
 weight: 1
 title: "Description"
 description: "Develop a community-based, and hence user sourced, multifunction UPS solution for use with the Raspberry Pi main SBC platform (currently RPi3 and 4 models). The board is designed to provide remote power or UPS solutions. Provisions are included for both USB and auxiliary input power. Power is fed to the RPi GPIO header."
-images: ["/rpi/desc_12.png"]
+images: ["/rpi/desc_13.png"]
 ---
 
 ## Repositories
