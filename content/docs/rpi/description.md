@@ -24,6 +24,10 @@ images: ["/rpi/desc_13.png"]
 
 Develop a community-based, and hence user sourced, multifunction UPS solution for use with the Raspberry Pi main SBC platform (currently RPi3 and 4 models).  The board is designed to provide remote power or UPS solutions.  Provisions are included for both USB and auxiliary input power.  Power is fed to the RPi GPIO header.
 
+*** This document is currently in DRAFT *** 
+*** Edits, corrections, and improvements are very welcome! ***
+*** The RPi Leto Team ***
+
 ### Feature Descriptions
 
 The board can operate islanded by using a connected battery pack or the board can be used as a UPS solution leaving the board connected to a power source. Leto supports charge while operating, providing uninterrupted RPi operation.
