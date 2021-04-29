@@ -27,12 +27,18 @@ All hardware designs and products you can find in this repository is licensed un
 
 ## Project Status
 {{< image src="/images/status.png" >}}
-## Appolo PCB (with ESP32 shield)
+## Apollo PCB (with ESP32 shield)
 {{< my_button href="/docs/uc/original/schematics/" text="schematics details">}}
 
 {{< model_viewer "/original/pcb.glb" "400" >}}
+### Gallery
+{{< load-photoswipe >}}
+{{< gallery dir="/images/apollo/" />}}
 
 ## Leto PCB (Raspberry pi hat)
 {{< my_button href="/docs/rpi/schematics/" text="schematics details">}}
 
 {{< model_viewer "/rpi/raspi.glb" "400" >}}
+
+### Gallery
+{{< gallery dir="/images/leto/" />}}
