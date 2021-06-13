@@ -118,15 +118,17 @@ The battery thermistor must be connected at J4. The thermistor must be a negativ
 
 ### Boost Converter
 
-The boost converter steps the charger output voltage to the target Leto supply voltage.  The TI TPS61088 package provides for a peak 10A capacity and internal thermal shutdown protection.
+The boost converter steps the charger output voltage to the target Leto supply voltage.  The TI TPS61088 package provides for a switch current of 10A and internal thermal shutdown protection.
 
 When operated in the target output range of 5V and between 0.5A and 3A, this boost converter achieves 95% efficiency.  The configurable switching frequency permitted the team to design a boost converter that would not cause RPi interference.
+
+NOTE: The enable pin of the TPS61088 cannot be used, as it is not a true-disconnector boost converter.  This means that even when disabled, there is an electrical connection from Vin to Vout through the inductor and an internal FET.  This necessitates using an external load switch. 
 
 {{<image src="/rpi/desc_9.png" >}}
 
 {{<image src="/rpi/desc_10.png" >}}
 
-On board power for the Leto 3.3V control components is provided by U5:
+On board power for the Leto 3.3V control components is provided by a linear regulator, U5:
 
 {{<image src="/rpi/desc_11.png" >}}
 
