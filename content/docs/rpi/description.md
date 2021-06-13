@@ -56,13 +56,13 @@ The board is separated into seven functional areas.  There is an accompanying pr
 
 ### Input Source
 
-The input source permits for connection to either a USB type-C connector or plated vias for soldering.  The team selected USB-C for its higher power capacity specification over the previous version of USB and that current versions of RPi 4 are configured with type-C.  This permits the end user to use their existing power supply to power the Leto project.
+The input source permits for connection to either a USB type-C connector or screw terminals.  The team selected USB-C for its higher power capacity specification over the previous version of USB and that current versions of RPi 4 are configured with type-C.  This permits the end user to use their existing power supply to power the Leto project.
 
-Recognizing that many other options for power are available, the team provided solder vias to permit the connection of alternate sources.  One considered use case is a remotely managed and voltage regulated solar array.
+Recognizing that many other options for power are available, the team provided screw terminals to permit the connection of alternate sources.  One considered use case is a remotely managed and voltage regulated solar array.
 
 {{<image src="/rpi/desc_1.png" width="300px" >}}
 
-The Leto board is designed to charge and run on a USB-PD source, but the onboard charging IC can accommodate input voltages on the solder vias between 4.5 V and 14V.  The data pins on the USB connector are connected to the charging IC to permit full use of its hardware features.  
+The Leto board is designed to charge and run on a USB-PD source, but the onboard charging IC can accommodate input voltages between 4.5 V and 14V.  The data pins on the USB connector are connected to the charging IC to permit full use of its hardware features.  
 
 Input conditioning includes reverse polarity protection via MOFSET Q3.
 
@@ -135,26 +135,22 @@ On board power for the Leto 3.3V control components is provided by a linear regu
 
 ### Output Protection
 
-The leto project provides output protection using a current regulating circuit connected downstream of the boost converter.  The NCP380 regulates output current in a short condition using internal MOFSET switching.
+The Leto project provides output protection using a current regulating circuit connected downstream of the boost converter.  The NCP380 regulates output current in a short condition using internal MOFSET switching.
 
 {{<image src="/rpi/desc_12.png" >}}
 
-The OP_Enable signal permits the Leto uC to switch off power the connected RPi and the FLAG signal indicates a circuit protection state.
+The OP_Enable signal permits the Leto uC to switch off power to the connected RPi and the FLAG signal indicates a circuit protection state.
 
-The team would like to see additional output signal quantification in future revisions to calculate total power consumption and provide estimated UPS or battery run times.  This feature is not yet implemented due to const and limits on revision one complexity.
+The team would like to see additional output signal quantification in future revisions to calculate total power consumption and provide estimated UPS or battery run times.  This feature is not yet implemented due to cost and limits on revision one complexity.
 
 
 ### Output Connections
 
-The Leto RPi power management project is designed to be an under-slung solution. The end user is required to assemble provided pogo pins to make connections to the underside of the RPi GPIO header.  The end user can alternately select to mount a standard GPIO shield connector. 
-
-An under-slung arrangement using the standard shield footprint was selected to permit the use of active RPi cooling or not interfere with other shields.
-
-
+The Leto RPi power management project is designed to be an under-slung solution. This is to allow the use of a Hat board on the top of the RPi and to not restrict the options for thermal management for the RPi.  The end user is required to assemble provided pogo pins to make connections to the underside of the RPi GPIO header.  Alternatively, the end user can select to solder a standard header, and use the Leto as a RPi Hat. The RPi Hat PCB outline was used specifically to allow this flexibility to the user.
 
 {{<image src="/rpi/desc_13.png" >}}
 
-Note: in the render above all of the GPIO are populated. The end user only needs to solder the required GPIO pins identified in the schematic below:
+Note: in the render above all of the GPIO are populated. The end user only needs to solder the required pins identified in the schematic below:
 
 {{<image src="/rpi/desc_14.png" >}}
 
@@ -162,60 +158,41 @@ The Leto board pin connection functionality is as follows:
 
 {{<image src="/rpi/desc_15.png" >}}
 
-## Previous Overview
+### Microcontroller
 
-### Block Diagram
+With the goal of providing a robust option to the user, a mid-range ST microcontroller was selected, the STM32F412.  The ST series was selected for several reasons including a well-developed HAL which would allow easy change to a different MCU if needed, well supported development environment, and ease of implementation to the hardware.  
 
-{{< new_button href="https://drive.google.com/drive/folders/1bbdN6MEDIAA9Wnlnko5vWSpzcss-Ae2l" text="reference design in gdrive" >}}
+An ATTiny85 footprint was also included as a backup MCU, in case the ST was not a feasible solution and to provide a second option for users.
 
-{{< svg-pan-zoom "/rpi/RPi Block Diagram - R1.svg" >}}
+### PCB Design
 
-The Super Power RPi edition is a battery backup unit for the Raspberry Pi single board computer.  It is meant to work
-with the Raspberry Pi 3 and 4.
+The PCB was designed as a 2 layer board in order to minimize cost.  Power planes were used to reduce the resistance on the high current nodes, and a ground plane was used on the bottom layer.  The smallest passive is an 0402, again to minimize any cost adders.  Additionally anything below 0402 requires a very delicate touch to rework and specialized equipment, so that was avoided.   Also, certain passives were intentionally oversized to 0603 or larger, as they were anticipated to be re-worked by users.
 
-
-### Design
-
-
-The design is based on the bq25895 charger IC and the TPS61088 boost converter IC.  It also integrates an STM32F412
-microcontroller to provide timing and control independent of the Raspberry Pi.
-
-The bq25895 provides some specific benefits for this project.  It has a low series resistance in it's FET, so the
-resistance between the battery and the boost converter is quite low. It also automatically negotiates higher power USB
-charging.  Finally, it has significant internal monitoring, which eliminates the need for external components such as
-an ADC.
-
-The STM32F412 was selected as it has quite a few internal peripherals to choose from. It also has a built in RTC, which
-allows for maintaining time even between power cycles.
-
-In addition to the STM32, the footprint for an ATTiny85 was provided, but not populated, such that if anyone wants to
-use that series of MCU, they are able.
-
-### Physical Form Factor
-
-The Super Power RPi takes the shape of a Pi HAT PCB.  It is designed to be used as either a traditional HAT, or in an
-underslung configuration.
-
-The traditional HAT makes electrical connections using the 40-pin header and it is secured using the mounting holes at
-the 4 corners.
-
-The underslung configuration also uses the mounting holes, but makes the electrical connections using pogo-pins.  The
-pogo-pins connect to the 5V, GND, and I2C pins.  The standoffs to be used are ____mm tall.
+The team discussed the possibility of making hand-solderability a design goal, but because that greatly limits the selection of battery charger and boost converter ICs, that goal was put aside.  
 
 ### Use Cases
 
-Generally speaking, any situation that needs a Raspberry Pi to operate on batteries can be a potential use-case for
-this design.
+Generally speaking, any situation that needs a Raspberry Pi to operate on batteries can be a potential use-case for this design.
 
 More specifically, the following use cases were considered:
 
-1. Uninterruptable Power Supply (UPS).  In cases where there is a potential power interruption, the Superpower provides
-   backup power so the Raspberry Pi does not have an unexpected restart.
-2. Portable Pi.  In cases where it is desirable to have a portable Pi or a Pi that will operate for extended periods of
-   time using something other than "commercial power mains", such as amateur radio Field Day competitions.  This can be used to provide a computer that meets this criteria.
+1. Uninterruptable Power Supply (UPS).  In cases where there is a potential power interruption, the Superpower provides continuous power so the Raspberry Pi does not have an unexpected restart.
+2. Portable Pi.  In cases where it is desirable to have a portable Pi or a Pi that will operate for extended periods of time using something other than "commercial power mains", such as amateur radio Field Day competitions.  This can be used to provide a computer that meets this criteria.
+
+### Known Issues with V1 of Leto PCB
+
+1. Wrong footprint used for U5. 
+
+### V2 changes (To be implemented)
+
+1. Add footprint for external oscillator for STM32.
+2. Move LDO onto its own sheet.
+3. Consider moving I2C connector to I2C2 port. 
 
 ### Potential future versions
 
-1. Build a specific version that includes a solar MPPT IC.
+1. Version to support Solar panels with MPPT.
+2. Version to support more than 1S battery configuration.
+
 
 [github readme](https://github.com/SensorsIot/SuperPower/tree/master/SuperPower-RPi)
