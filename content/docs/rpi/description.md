@@ -91,28 +91,28 @@ Additional selection criteria for the charge controller uC included a boost freq
 
 The battery charge uC communicates with the Leto host uC over I2C.
 
-There is a provision for use of a remote battery thermistor for advanced battery charge management.
+The connection for a thermistor is provided.  The bq25895 needs an external voltage divider to properly measure the thermistor, and the resistances used on the bq25895 eval board are duplicated here.  
 
 The footprints are provided for an onboard LED indicates the presence of voltage on the output of the charging uC, however, it is not populated.
 
 {{<image src="/rpi/desc_5.png" width="200px" >}}
 
-The charge current can be set manually using the R8 resistor.  The nominal input current max is calculated using I_ILIM = K_ILIM  / R8 = 355 / 220 = 1.61 A
+The charge current can be set manually using the R8 resistor.  The nominal input current max is calculated using I_ILIM = K_ILIM  / R8 = 355 / 220 = 1.61 A.  The ILIM pin is also provided to an ADC capable pin of the uC, as the voltage on ILIM is proportional to the input current, as a fraction of 0.8V.  See the bq25895 datasheet for more info.
 
 {{<image src="/rpi/desc_6.png" >}}
 
 ### Battery
-The project is designed for use with a 2800 mAh Li-Ion 18650 3S battery configuration. Nominal battery voltage design is 3.7V.  The charging uC does not include functionality for cell balancing. This was not implemented due to the nature and variation of potential user connected sources.  
+The project is designed to use Li-Ion chemistry batteries, with only 1 cell in series.  The nominal battery voltage for Li-Ion chemistry is 3.7-4.2V  The charging IC does not include functionality for cell balancing.  
 
 The Leto project is not designed for use with multicell packs arranged in a series configuration with voltages over 3.7V.
 
-Recognizing the possibility of user error, the battery circuit implemented polarity protection through Q1 and Q6.
+Recognizing the possibility of user error, the battery circuit implemented reverse polarity protection through Q1 and Q6.
 
 {{<image src="/rpi/desc_7.png" >}}
 
-The board includes multiple test points for the end user to explore and measure board functions.  TP1 and TP2 are provided to manually test the voltage across the battery connectors.
+TP1 and TP2 are solder points for wires, which are provided in case the user does not want to use the JST connector that is included.  
 
-The optional battery thermistor can be connected at J4. The thermistor must be a negative temperature coefficient style.  The recommended unit by TI is a 103AT-2.
+The battery thermistor must be connected at J4. The thermistor must be a negative temperature coefficient style.  The recommended unit by TI is a 103AT-2.
 
 {{<image src="/rpi/desc_8.png" width="400px" >}}
 
