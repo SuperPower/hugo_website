@@ -25,7 +25,9 @@ images: ["/rpi/desc_13.png"]
 Develop a community-based, and hence user sourced, multifunction UPS solution for use with the Raspberry Pi main SBC platform (currently RPi3 and 4 models).  The board is designed to provide remote power or UPS solutions.  Provisions are included for both USB and auxiliary input power.  Power is fed to the RPi GPIO header.
 
 *** This document is currently in DRAFT *** 
+
 *** Edits, corrections, and improvements are very welcome! ***
+
 *** The RPi Leto Team ***
 
 ### Feature Descriptions
@@ -71,9 +73,15 @@ Overvoltage protection via the circuit using Q2 and Q7. The Zener voltage for D4
 {{<image src="/rpi/desc_3.png" >}}
 
 ### Charger
-The Leto project selected the TI BQ25895RTW battery charging uC for its feature set and ability to provide 3.0A to the connected load.  While the RPi in base configuration does not regularly exceed 1.0A of current draw, the team wanted to ensure that the Leto project matched the 3.0A power source regularly provided with the RPi 4.  This additional current overhead permits the use of attached peripherals such as an SSD, field sensors, overclocking, and active cooling.
+The Leto project selected the TI BQ25895 battery charging IC for its feature set and ability to provide 3.0A to the connected load.  Primary features that were needed are:
+1. Switch-mode operation to have improved efficiency.
+2. Sufficient current supplied to load to run the Raspberry Pi 4 with overhead for peripherals.
+3. Sufficient charging current to allow better than 1:1 charging/discharging operation.  
+4. Charging and sourcing should at least minimally function without uC or RPi intervention.  
 
-The current overhead also permits the battery charge uC to operate well below its thermal limits during regular use.
+The RPi in base configuration does not regularly exceed 1.0A of current draw, and the RPi designers chose a 3A USB power supply to allow overhead for peripherals.  The team wanted to ensure that the Leto project matched that 3.0A power source as a design specification.  This additional current overhead permits the use of attached peripherals such as an SSD, field sensors, overclocking, and active cooling.
+
+The current overhead also permits the battery charge IC to operate well below its thermal limits during regular use.
 
 The charger uC uses internal voltage conversion circuitry to control battery charge curves and its externally connected boost converter circuit to regulate the output voltage.
 
@@ -85,11 +93,11 @@ The battery charge uC communicates with the Leto host uC over I2C.
 
 There is a provision for use of a remote battery thermistor for advanced battery charge management.
 
-An onboard LED indicates the presence of voltage on the output of the charging uC.
+The footprints are provided for an onboard LED indicates the presence of voltage on the output of the charging uC, however, it is not populated.
 
 {{<image src="/rpi/desc_5.png" width="200px" >}}
 
-Current limiting functionality is available on the charger but is not implemented in this version.  IMEAS is provided for future feature addition or for the end user to add features.
+The charge current can be set manually using the R8 resistor.  The nominal input current max is calculated using I_ILIM = K_ILIM  / R8 = 355 / 220 = 1.61 A
 
 {{<image src="/rpi/desc_6.png" >}}
 
