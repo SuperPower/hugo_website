@@ -54,19 +54,19 @@ The board is separated into seven functional areas.  There is an accompanying pr
 
 ### Input Source
 
-The input source permits for connection to either a USB type-C connector or screw terminals.  The team selected USB-C for its higher power capacity specification over the previous version of USB and that current versions of RPi 4 are configured with type-C.  This permits the end user to use their existing power supply to power the Leto project.
+The input source permits for connection to either a USB type-C connector or plated vias for soldering.  The team selected USB-C for its higher power capacity specification over the previous version of USB and that current versions of RPi 4 are configured with type-C.  This permits the end user to use their existing power supply to power the Leto project.
 
-Recognizing that many other options for power are available, the team provided screw terminals to permit the connection of alternate sources.  One considered use case is a remotely managed and voltage regulated solar array.
+Recognizing that many other options for power are available, the team provided solder vias to permit the connection of alternate sources.  One considered use case is a remotely managed and voltage regulated solar array.
 
 {{<image src="/rpi/desc_1.png" width="300px" >}}
 
-The Leto board is designed to charge and run on a 5V power source, but the onboard charging uC can accommodate input voltages on the screw terminals between 4.5 V and 14V.  The data pins on the USB connector are connected to the charging uC to permit full use of its hardware features.  The charging uC supports OTG USB functionality.
+The Leto board is designed to charge and run on a USB-PD source, but the onboard charging IC can accommodate input voltages on the solder vias between 4.5 V and 14V.  The data pins on the USB connector are connected to the charging IC to permit full use of its hardware features.  
 
 Input conditioning includes reverse polarity protection via MOFSET Q3.
 
 {{<image src="/rpi/desc_2.png" width="400px" >}}
 
-Overvoltage protection via the circuit using Q2 and Q7.
+Overvoltage protection via the circuit using Q2 and Q7. The Zener voltage for D4 and the Vth for Q2 determine the overvoltage cutoff point.  D5 and R17 are present to allow Q2 to operate at a higher voltages.   
 
 {{<image src="/rpi/desc_3.png" >}}
 
